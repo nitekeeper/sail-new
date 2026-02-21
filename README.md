@@ -1,16 +1,18 @@
 # sail-new
 <p align="center"> <strong>Laravel Sail Bootstrapper</strong><br> A clean, cross-platform Bash tool for creating Laravel projects with Docker — safely and correctly. </p> <p align="center"> <img src="https://img.shields.io/badge/Laravel-12.x-red?logo=laravel" /> <img src="https://img.shields.io/badge/Docker-required-blue?logo=docker" /> <img src="https://img.shields.io/badge/Bash-5%2B-black?logo=gnubash" /> <img src="https://img.shields.io/badge/Platform-Linux%20%7C%20macOS%20%7C%20WSL-lightgrey" /> <img src="https://img.shields.io/badge/License-MIT-green" /> </p>
 
-
 ---
 
 ## What is sail-new?
-`sail-new` is a production-grade Laravel project generator built on top of Laravel SaiIt solves common issues developers encounter:
+`sail-new` is a Laravel project generator built on top of Laravel Sail.
+
+It solves common issues developers encounter:
 - Root-owned files after Docker installs
 - Broken local Sail symlinks
 - System pollution via /usr/local/bin
 - Permission headaches
 - Manual Sail setup every time
+
 Instead, it provides:
 - UID/GID-safe Docker execution
 - One-time global Sail wrapper
