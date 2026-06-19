@@ -1,0 +1,20 @@
+name: CI
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  shellcheck:
+    name: ShellCheck
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: ShellCheck (errors only)
+        run: |
+          set -euo pipefail
+          mapfile -t files < <( { find . -path ./.git -prune -o -type f \( -name '*.sh' -o -name '*.bash' \) -print; grep -rIlE '^#!.*(bash|sh)' --exclude-dir=.git . 2>/dev/null; } | sort -u )
+          if [ ${#files[@]} -eq 0 ]; then echo "No shell scripts found."; exit 0; fi
+          printf 'Linting:\n%s\n' "${files[@]}"
+          shellcheck --severity=error "${files[@]}"
