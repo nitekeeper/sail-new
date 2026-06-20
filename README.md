@@ -39,11 +39,13 @@ Instead, it provides:
 ---
 ## Installation
 ```
-git clone https://github.com/yourusername/sail-new.git
+git clone https://github.com/nitekeeper/sail-new.git
 cd sail-new
 chmod +x sail-new.sh
 source ./sail-new.sh
 ```
+
+> The first `source ./sail-new.sh` installs the `sail-new` alias (reload your shell or run `source ~/.bashrc`); after that you can just run `sail-new`.
 ---
 ## Usage
 ```
